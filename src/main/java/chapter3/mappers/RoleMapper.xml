@@ -20,6 +20,6 @@
 	<!-- 删除  -->
 	<select id="addRole"  resultType="role"  parameterType="long">
 		SELECT * FROM role where id =#{id} <!-- 主键 -->
-	</select>
+	</select>0
 	
 </mapper>
