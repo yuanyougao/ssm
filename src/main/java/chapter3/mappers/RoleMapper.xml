@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="chapter3.dao.RoleDao">
-	<select id="get"   parameterType="int">
+<mapper namespace="chapter3.dao.RoleMapper">
+	<!-- 查询 -->
+	<select id="getRole"  resultType="role"  parameterType="long">
 		SELECT * FROM role where id =#{id} <!-- 主键 -->
 	</select>
+	
+	<!-- 增加  -->
+	<select id="addRole"  resultType="role"  parameterType="long">
+		SELECT * FROM role where id =#{id} <!-- 主键 -->
+	</select>
+	
+	<!-- 删除  -->
+	<select id="addRole"  resultType="role"  parameterType="long">
+		SELECT * FROM role where id =#{id} <!-- 主键 -->
+	</select>
+	
+	<!-- 删除  -->
+	<select id="addRole"  resultType="role"  parameterType="long">
+		SELECT * FROM role where id =#{id} <!-- 主键 -->
+	</select>
+	
 </mapper>

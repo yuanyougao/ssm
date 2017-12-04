@@ -6,15 +6,15 @@ public class Role implements Serializable  {
 
 	private static final long serialVersionUID = 1098321123L;
 	
-	private int id ;  //主键
+	private long id ;  //主键
 	
 	private String username ;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
