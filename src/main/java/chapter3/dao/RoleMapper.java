@@ -6,10 +6,10 @@ public interface RoleMapper {
 
 	public Role getRole (long id ) ; 
 	
-	public int addRole (Role role ) ;
+	public void addRole (Role role ) ;
 	
-	public int delRole (long id ) ;
+	public void delRole (long id ) ;
 	
-	public int updateRole (Role role ) ; 
+	public void updateRole (Role role ) ; 
 	
 }

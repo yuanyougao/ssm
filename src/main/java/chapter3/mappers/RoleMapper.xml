@@ -8,18 +8,17 @@
 	</select>
 	
 	<!-- 增加  -->
-	<select id="addRole"  resultType="role"  parameterType="long">
-		SELECT * FROM role where id =#{id} <!-- 主键 -->
-	</select>
+	<insert id="addRole"   parameterType="role">
+		insert into role (id ,username)  values (#{id} , #{username}) <!-- 主键 -->
+	</insert>
 	
 	<!-- 删除  -->
-	<select id="addRole"  resultType="role"  parameterType="long">
-		SELECT * FROM role where id =#{id} <!-- 主键 -->
-	</select>
+	<delete id="delRole"  parameterType="long">
+		delete t.* FROM role t where id =#{id} <!-- 主键 -->
+	</delete>
 	
-	<!-- 删除  -->
-	<select id="addRole"  resultType="role"  parameterType="long">
+	<!-- 改  -->
+	<update id="updateRole"    parameterType="long">
 		SELECT * FROM role where id =#{id} <!-- 主键 -->
-	</select>0
-	
+	</update>
 </mapper>
