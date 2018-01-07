@@ -6,6 +6,7 @@ public class Role implements Serializable  {
 
 	private static final long serialVersionUID = 1098321123L;
 	
+	
 	private long id ;  //主键
 	
 	private String username ;
