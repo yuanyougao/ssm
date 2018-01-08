@@ -14,21 +14,27 @@
 	</select>
 	
 	<select id="getAll2" resultType="students" parameterType="java.lang.String">
-	<!--  <bind name="pattern" value=" '%'+  s_no + '%' "/>-->
+	    <bind name="pattern" value=" '%'+  s_no + '%' "/>
 		SELECT * FROM t_student where 1=1
 		<if test="s_no != null and s_no !=''">   
-			and s_no like  CONCAT ('%',#{s_no},'%')  #{s_no} 
+			and s_no like '${pattern}'
 		</if>
 	</select>
 	
 	<select id="getAll3" resultType="students" parameterType="java.util.Map" >
-		SELECT * FROM t_student where 1=1
+		SELECT * FROM t_student where 1=1 
 		<if test="s_name != null and s_name !=''">   <!-- 这个if中没有{}切记 -->
 			and s_name = '${s_name}'
 		</if>
 		<if test="s_no !=null and s_no !=''">
-			and s_no  like  CONCAT ('%',#{s_no},'%')
+			and s_no = #{s_no}
 		</if>
 	</select>
+	
+	<select id="countStudents" resultType="int">
+		select count(1) as countstudents from t_student 
+	</select>
+	
+	
 	
 </mapper>

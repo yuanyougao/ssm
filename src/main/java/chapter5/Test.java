@@ -35,6 +35,8 @@ public class Test {
 				Scanner getsnoinput = new Scanner(System.in);
 				String getnameinext = getsnoinput.next();
 				studentservice.getAll(null,"3",getnameinext);//参数@Map
+			} else if ( "4".equals(inputnext) ){
+				studentservice.getAll(null,"4",null);//参数@Map
 			}
 		}
 		
