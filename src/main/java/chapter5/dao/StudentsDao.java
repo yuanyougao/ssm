@@ -6,11 +6,11 @@ import org.apache.ibatis.annotations.Param;
 import chapter5.pojo.Students;
 public interface StudentsDao {
 
-	public void addStu (Students students) ; 
+	public int addStu (Students students) ; 
 	
-	public void delStu (int s_id) ;
+	public int delStu (@Param("s_no") String s_no) ;
 	
-	public void updateStu (Students students) ;
+	public int updateStu (Students students) ;
 	
 	public List <Students> getAll1 (Students students) ;
 	

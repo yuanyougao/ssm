@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+parameterType ：
+可以给出类的全命名，也可以给出别名，但是别名必须是Mybatis 内部定义或者自定义的
+
+parameterMap :
+切记已经废弃，不在使用
+
+resultType :
+定义类的全路径，在允许自动匹配的情况下，结果集将通过java bean 的规范映射，
+或者定义为int ,double float map 等参数
+也可以使用别名，但是要符合别名规范，且不能和resultMap同时使用
+
+resultMap :
+它是映射集的引用，将执行强大的映射功能，我们可以使用resultType he resultMap 其中一个,resultMap 能提供自定义映射规则的机会
+ -->
 
 <mapper namespace="chapter5.dao.StudentsDao">
 	<!-- 查询 -->
@@ -35,6 +50,13 @@
 		select count(1) as countstudents from t_student 
 	</select>
 	
+	<insert id="addStu" parameterType="students">
+		INSERT INTO t_student (s_no, s_name, c_no ) values ('${s_no}', '${s_name}', '${c_no}' ) 
+	</insert>
 	
+	
+	<delete id="delStu"  parameterType="java.lang.String" >
+		DELETE 	t.* from t_student t where t.s_no = '${s_no}'
+	</delete>
 	
 </mapper>

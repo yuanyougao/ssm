@@ -8,7 +8,14 @@ import chapter5.serivce.StudentService;
 
 public class Test {
 
-	
+	/**
+	 * 0 查询所有学生
+	 * 1根据姓名来查询
+	 * 2根据学号模糊查询
+	 * 3根据学号来查询
+	 * 4查询所有学员的个数
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		StudentService studentservice =new StudentService () ;
