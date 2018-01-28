@@ -7,7 +7,7 @@ import chapter5.pojo.Students;
 import chapter5.serivce.StudentService;
 
 public class Test {
-
+ 
 	/**
 	 * 0 查询所有学生
 	 * 1根据姓名来查询
