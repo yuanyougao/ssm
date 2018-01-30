@@ -12,17 +12,29 @@
       http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
       
       <!-- id 和 name 都可以通过getbean查询到  就算name和id不一样也都是可以找到-->
-      
-      <bean id="source" class="chapter9.Source"   >
+      <bean id="source1" name="source1" class="chapter9.Source">
       	<property name="fruit" value="橙汁"></property>
       	<property name="sugar" value="多糖"></property>
       	<property name="size" value="10"></property>
       </bean>
       
+      <bean id="source" class="chapter9.Source"   >
+      	<property name="fruit" value="橙汁"></property>
+      	<property name="sugar" value="多糖"></property>
+      	<property name="size" value="10"></property>
+      </bean> 
+      
       <bean id ="juicemaker2"   class="chapter9.JuiceMaker2" lazy-init="default"  init-method="init" destroy-method="myDestroy">
       	<property name="beverageShop" value="贡茶"></property>
       	<property name="source" ref="source"></property>
       </bean>
+      
+      <bean id ="role1" class="chapter9.Role">
+     	<property name="id" value="1"></property>
+		<property name="rolename" value="总经理"></property>
+      	<property name="note" value="总经理"></property>
+      </bean>
+      
       
       
 </beans>

@@ -12,13 +12,14 @@ public class ApplicationContextTest {
 		ApplicationContext ctx = 
 				new ClassPathXmlApplicationContext("chapter9/applicationContext.xml");
 		
-		JuiceMaker2 juicemaker2 = (JuiceMaker2) ctx.getBean("juicemaker2");
-		System.err.println(juicemaker2.makeJuice());
+		/*JuiceMaker2 juicemaker2 = (JuiceMaker2) ctx.getBean("juicemaker2");
+		System.err.println(juicemaker2.makeJuice());*/
 		
 		/*JuiceMaker2 juicemakerclass =  ctx.getBean(JuiceMaker2.class);
 		System.err.println(juicemakerclass.makeJuice());*/
 		
-		
+		Source role =(Source)ctx.getBean("source1");
+		System.out.println(role.getSugar());
 		
 		((AbstractApplicationContext) ctx).close();
 		
