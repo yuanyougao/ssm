@@ -1,5 +1,7 @@
 package chapter10;
-import org.apache.commons.dbcp2.BasicDataSource;
+import java.sql.SQLException;
+
+import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Primary;
@@ -8,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class ApplicationContextTest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 		ApplicationContext ctx = 
 				new AnnotationConfigApplicationContext(PageConfig.class);
 		/*Role role =(Role)ctx.getBean(Role.class);
@@ -22,12 +24,14 @@ public class ApplicationContextTest {
 	    RoleService roleservice = ctx.getBean(RoleService.class);
 		roleservice.printRoleInfo1();
 		 */
-		
+		/*
 		//使用@bean 生产实体类，并且使用了init 和 destroyMethod
 		Student student = ctx.getBean(Student.class);
 		student.toString();
-		
-		 
+		*/
+		RoleDataSourceService roledatasourceservice = 
+						(RoleDataSourceService)ctx.getBean("roledatasourceserviceimpl");
+		roledatasourceservice.getRoleById(3);
 		
 		
 		

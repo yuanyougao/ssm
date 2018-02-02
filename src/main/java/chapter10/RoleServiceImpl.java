@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class RoleServiceImpl implements RoleService {
 
+	@Override
+	public Role getRoleById() {
+		
+		return null;
+	}
 	@Bean(name="stduent" , initMethod="init", destroyMethod="myDestroy")
 	public Student getStu(){
 		Student student = new Student("1", "username");

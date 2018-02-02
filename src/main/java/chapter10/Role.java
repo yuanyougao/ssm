@@ -15,6 +15,13 @@ public class Role {
 	@Value("备注总经理")
 	private String note;
 	
+	@Override
+	public String toString() {
+		StringBuffer sb = new StringBuffer();
+		sb.append("id:"+this.getId() +" 角色名称:"+this.getRolename());
+		return sb.toString();
+	}
+	
 	public int getId() {
 		return id;
 	}
