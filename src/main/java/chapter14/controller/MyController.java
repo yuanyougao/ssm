@@ -36,7 +36,7 @@ public class MyController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("rolelist");
 		return mv;
-	}
+	} 
 	
 	
 	public RoleService getRoleservice() {
