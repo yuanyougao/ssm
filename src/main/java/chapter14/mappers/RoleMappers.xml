@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="chapter14.dao.RoleDao">
+	<select id="getAllRole" resultType="chapter14.pojo.Role">
+		select id , username from role 
+	</select>
+
+	<select id="getRoleByRole" resultType="chapter14.pojo.Role" parameterType="chapter14.pojo.Role">
+		select * from role where id = ${id} and username = '${username}'
+	</select>
+	
+	<select id="getRoleById" resultType="chapter14.pojo.Role" parameterType="java.lang.String">
+		select * from role where id = ${id} and username = '${username}'
+	</select>
+	
+</mapper>
