@@ -94,7 +94,7 @@
     </bean>
 	-->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="chapter12.dao" />
+		<property name="basePackage" value="chapter14*" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 		<!-- 使用sqlSessionTemplateBeanName将覆盖sqlSessionFactoryBeanName的配置 -->
 		<!-- <property name="sqlSessionTemplateBeanName" value="sqlSessionFactory"/> -->
