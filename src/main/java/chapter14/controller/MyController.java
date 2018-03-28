@@ -35,6 +35,7 @@ public class MyController {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("rolelist");
+		mv.addObject("rolelist", list);
 		return mv;
 	} 
 	
