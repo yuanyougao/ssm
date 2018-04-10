@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
+import chapter14.pojo.Role;
 import chapter14.service.RoleService;
 
 @Controller("myController")
@@ -61,6 +62,18 @@ public class MyController {
 		mv.addObject("rolelist", list);
 		return mv;
 	}
+	
+	//无需任何注解
+		@RequestMapping("/roleParamPojo")
+		public ModelAndView roleParamPojo (Role role) {
+			System.out.println("id:"+role.getId());
+			System.out.println("username:"+role.getUsername());
+			List list = roleservice.getAllRole();
+			ModelAndView mv = new ModelAndView();
+			mv.setViewName("rolelist");
+			mv.addObject("rolelist", list);
+			return mv;
+		}
 	
 	@RequestMapping("/getRole/{id},{username}")
 	public ModelAndView getRoleById (@PathVariable("id") int id ,@PathVariable("username") String username) {
