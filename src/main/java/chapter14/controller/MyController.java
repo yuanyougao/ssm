@@ -85,6 +85,21 @@ public class MyController {
 		mv.addObject("rolelist", list);
 		return mv;
 	}
+	@RequestMapping("/roleredirect")
+	public String roleredirect () {
+		return "redirect:/my/roleParamPojo.action";
+	}
+	
+	
+	@RequestMapping("/roleredirectview")
+	public ModelAndView roleredirectview () {
+		List list = roleservice.getAllRole();
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("rolelist");
+		mv.addObject("rolelist", list);
+		mv.setViewName("redirect:/my/roleParamPojo.action");
+		return mv;
+	}
 	
 	
 	
