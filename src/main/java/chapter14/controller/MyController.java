@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
 import chapter14.service.RoleService;
@@ -28,7 +30,7 @@ public class MyController {
 	}
 	
 	@RequestMapping("/rolelist")
-	public ModelAndView rolelist (@RequestParam(value="id",required=false) int id ,@RequestParam("username") String username) {
+	public ModelAndView rolelist (@RequestParam(value="id",required=false,defaultValue = "1") int id ,@RequestParam("username") String username) {
 		System.out.println(id);
 		System.out.println(username);
 		List list = roleservice.getAllRole();
@@ -38,6 +40,40 @@ public class MyController {
 		mv.addObject("rolelist", list);
 		return mv;
 	} 
+	
+	@RequestMapping("/roleSessionAttribute")
+	public ModelAndView roleSessionAttribute (@SessionAttribute(value ="username",required=false) String username) {
+		System.out.println(username);
+		List list = roleservice.getAllRole();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("rolelist");
+		mv.addObject("rolelist", list);
+		return mv;
+	} 
+	//无需任何注解
+	@RequestMapping("/roleParam")
+	public ModelAndView roleParam (String username) {
+		System.out.println(username);
+		List list = roleservice.getAllRole();
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("rolelist");
+		mv.addObject("rolelist", list);
+		return mv;
+	}
+	
+	@RequestMapping("/getRole/{id},{username}")
+	public ModelAndView getRoleById (@PathVariable("id") int id ,@PathVariable("username") String username) {
+		System.out.println("id:"+id);
+		System.out.println("username:"+username);
+		List list = roleservice.getAllRole();
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("rolelist");
+		mv.addObject("rolelist", list);
+		return mv;
+	}
+	
+	
 	
 	
 	public RoleService getRoleservice() {
