@@ -16,6 +16,16 @@
 	<property name="prefix" value="/WEB-INF/view/"></property>
 	<property name="suffix" value=".jsp"></property>
 </bean>
+
+<mvc:interceptors>
+	<mvc:interceptor>
+		<mvc:mapping path="/*.action"/>
+		<mvc:mapping path="/*"/>
+		<bean class="chapter14.controller.RoleInterceptor"></bean>
+	</mvc:interceptor>
+</mvc:interceptors>
+
+
 	<!-- 把所有的请求当作普通的请求，不做拦截设置 -->
 <!-- 	<mvc:default-servlet-handler /> -->
 </beans>
