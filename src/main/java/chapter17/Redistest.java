@@ -3,10 +3,11 @@ package chapter17;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
-
 public class Redistest {
 
 	public static void main(String[] args) {
+		
+		
 		JedisPoolConfig  poolcfg = new JedisPoolConfig();
 		poolcfg.setMaxIdle(50);//最大空闲
 		poolcfg.setMaxTotal(100);//最大连接
